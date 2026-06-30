@@ -244,14 +244,15 @@ def honeypot_flags(c):
     flags = []
     prof = c.get("profile", {})
     yoe = prof.get("years_of_experience", 0) or 0
-    months_cap = yoe * 12 + 12  # can't have used a skill longer than you've worked
+    months_cap = yoe * 12 + 12  # tenure can't exceed the stated career by much
 
-    # Skill used longer than the person's entire career.
-    for sk in c.get("skills", []):
-        if (sk.get("duration_months", 0) or 0) > months_cap and yoe > 0:
-            flags.append(f"claims {sk.get('duration_months')}mo of "
-                         f"{sk.get('name')} but only {yoe}y total experience")
-            break
+    # NOTE: we deliberately DO NOT flag "skill duration_months > career". In this
+    # dataset a skill's duration_months is an independent field (capped ~96mo) and
+    # routinely exceeds years_of_experience for perfectly genuine candidates (e.g.
+    # a 5.9y Senior AI Engineer listing "FAISS: 86mo" learned partly pre-career).
+    # Using it as an impossibility signal wrongly zeroed ~9,200 people, including
+    # ~49 elite AI engineers that belong in the top 100. The real honeypots are
+    # caught by the structural checks below instead.
 
     # Several "expert/advanced" skills with 0 months of actual use.
     zero_use_expert = sum(
