@@ -1,0 +1,27 @@
+# Data — large; regenerate from the hackathon bundle. Do NOT commit.
+data/candidates.jsonl
+data/candidates.jsonl.gz
+data/sample_candidates.json
+
+# Precomputed artifacts — regenerate with precompute_embeddings.py
+data/embeddings.npy
+data/embeddings_ids.json
+data/embeddings_meta.json
+
+# Output
+submission.csv
+ranked_sample.csv
+emb_log.txt
+*.log
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
