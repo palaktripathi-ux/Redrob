@@ -1,0 +1,13 @@
+# Core ranking (required) — works on CPU, offline, within the 5-min budget.
+numpy>=1.26,<3
+pandas>=2.0
+scikit-learn>=1.3
+
+# Neural "meaning match" upgrade (optional but recommended).
+# torch is CPU-only; install with:
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+torch>=2.2
+sentence-transformers>=2.6
+
+# Sandbox/demo app (only needed to run app.py)
+gradio>=4.0
