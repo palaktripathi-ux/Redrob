@@ -1,23 +1,23 @@
 # Redrob Hackathon — Submission Metadata
 # Copy of the metadata submitted via the portal. Fill in the CAPITALISED parts.
 
-team_name: "YOUR-TEAM-NAME"
+team_name: "Palak Tripathi"
 
 primary_contact:
-  name: "YOUR NAME"
-  email: "you@example.com"
-  phone: "+91-XXXXXXXXXX"
+  name: "PALAK TRIPATHI"
+  email: "palaktripathi77@gmail.com"
+  phone: "+91-9319904655"
 
 team_members:
-  - name: "YOUR NAME"
-    email: "you@example.com"
-    role: "ML Engineer"
+  - name: "PALAK TRIPATHI"
+    email: "palaktripathi77@gmail.com"
+    role: "Data Analyst"
 
 # ============================================================================
 # Code and reproducibility
 # ============================================================================
-github_repo: "https://github.com/YOUR_USERNAME/redrob-ranker"
-sandbox_link: "https://huggingface.co/spaces/YOUR_USERNAME/redrob-ranker"
+github_repo: "https://github.com/palaktripathi-ux/Redrob-Candidate-Ranker.git"
+sandbox_link: "https://huggingface.co/spaces/Palaktripathi/palak"
 reproduce_command: "python rank.py --candidates ./data/candidates.jsonl --out ./submission.csv"
 
 # ============================================================================
