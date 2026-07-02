@@ -16,7 +16,7 @@ team_members:
 # ============================================================================
 # Code and reproducibility
 # ============================================================================
-github_repo: "https://github.com/palaktripathi-ux/Redrob-Candidate-Ranker.git"
+github_repo: "https://github.com/palaktripathi-ux/Redrob.git"
 sandbox_link: "https://huggingface.co/spaces/Palaktripathi/palak"
 reproduce_command: "python rank.py --candidates ./data/candidates.jsonl --out ./submission.csv"
 
