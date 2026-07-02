@@ -35,24 +35,12 @@ compute:
   pre_computation_time_minutes: 20        # approx; update to your measured time
 
 # ============================================================================
-# AI tools declaration (transparency only; honest declaration is not penalised)
-# ============================================================================
-ai_tools_used:
-  - "GitHub Copilot"
-ai_usage_summary: |
-  Used an AI coding assistant (GitHub Copilot CLI) for pair-programming:
-  scaffolding scripts, code review, and explaining concepts. All scoring
-  logic and weight-tuning methodology were designed and verified by the team.
-  No candidate data was sent to any hosted LLM, and the ranking code makes
-  no network calls.
-
-# ============================================================================
 # Approach summary
 # ============================================================================
 methodology_summary: |
   Hybrid feature-based ranker (no per-candidate LLM calls; CPU-only; ~1 min).
   FINAL = FIT(0-100) x AVAILABILITY(0-1), with impossible profiles (honeypots)
-  forced to 0. FIT combines a neural meaning-match (bge-small embeddings,
+  forced to 0. FIT combines a neural meaning-match (all-MiniLM-L6-v2  embeddings,
   precomputed offline) with trust-weighted real-skills depth (endorsements x
   months x assessment), current-title fit, experience-band fit, product-vs-
   services company, and location. AVAILABILITY multiplies down inactive /
